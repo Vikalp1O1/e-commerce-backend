@@ -2,11 +2,11 @@ import { User } from "../../models/user.model.js";
 
 export const isAdmin = async(req, res, next) => {
 
-    console.log(req.user);
+    // console.log(req.user);
     const id = req.user.id;
 
     const role = await User.findById(id).select('role');
-    console.log(role, 'role in isAdmin middleware');
+    // console.log(role, 'role in isAdmin middleware');
     
     // next();
 

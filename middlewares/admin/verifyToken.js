@@ -4,10 +4,10 @@ import jwt from 'jsonwebtoken';
 export const verifyToken = (req, res, next) => {
 
 
-  console.log(req.cookies, 'in verifyToken outside middleware');
+  // console.log(req.cookies, 'in verifyToken outside middleware');
   try {
     const token = req.cookies.refreshToken;
-    console.log(token, 'in verifyToken middleware');
+    // console.log(token, 'in verifyToken middleware');
     
     if (!token) {
       return res.status(401).json({ message: 'Unauthorized , token not found' });

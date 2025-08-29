@@ -1,7 +1,7 @@
 import { v2 as cloudinary } from 'cloudinary' 
 import fs from 'fs'
 
-console.log(process.env.CLOUD_API_KEY,'cloudinary api key');
+// console.log(process.env.CLOUD_API_KEY,'cloudinary api key');
 cloudinary.config({ 
   // cloud_name: process.env.CLOUD_NAME, 
   // api_key: process.env.CLOUD_API_KEY , 
@@ -30,7 +30,7 @@ const uploadImage = async (imagePath) => {
     try {
       // Upload the image
       const result = await cloudinary.uploader.upload(imagePath, options);
-      console.log('Image uploaded to Cloudinary:', result.secure_url);
+      // console.log('Image uploaded to Cloudinary:', result.secure_url);
       
       // Delete the local file after successful upload
       fs.unlinkSync(imagePath);

@@ -8,7 +8,7 @@ export const addToCartService = async (req) => {
         const userId = req.user.id;
         // console.log(userId,'userId');
         const { productId } = req.body;
-        console.log(req.body,'productId');
+        // console.log(req.body,'productId');
         const product = await Product.findById(productId);
 
         if (!product) {
@@ -57,7 +57,7 @@ export const removeFromCartService = async (req) => {
             throw new AppError("Cart not found",404);
         }
         const productIndex = cart.products.findIndex((item) => item.productId.toString() === id);
-        console.log(productIndex,'productIndex');
+        // console.log(productIndex,'productIndex');
         if (productIndex === -1) {
             throw new AppError("Product not found in cart",404);
         }
