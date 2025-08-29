@@ -28,7 +28,7 @@ app.use('/api',userRouter);
 app.use('/api/products',productRouter);
 app.use('/api/cart',cartRouter);
 
-const PORT = process.env.PORT || 4040;
+const PORT = process.env.PORT;
 
 connectToDB()
 .then(()=>{
